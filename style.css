@@ -1,0 +1,590 @@
+/* ==========================================================================
+   ROYAL FURNITURE MALL — VARIANT 03: NORDIC MINIMALIST LIVING & EARTH
+   Clean Scandinavian Timber, Sage Forest & Linen Harmony
+   ========================================================================== */
+
+:root {
+  --bg-ground: #F8F6F2;
+  --bg-sand: #EFECE6;
+  --bg-card: #FFFFFF;
+  
+  --forest-dark: #202621;
+  --forest-moss: #3C4A3E;
+  --sage-accent: #5B7563;
+  --sage-soft: rgba(91, 117, 99, 0.12);
+  --wheat: #D8C3A5;
+  --hairline: #E2DDD5;
+  
+  --text-main: #242422;
+  --text-body: #4A4A45;
+  --text-light: #7E7C74;
+  
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'Spline Sans Mono', monospace;
+  
+  --radius-card: 16px;
+  --radius-pill: 9999px;
+  --header-height: 80px;
+}
+
+/* Scrollbar Removal */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar, html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+html {
+  background: var(--bg-ground);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-ground);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: rgba(248, 246, 242, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(24px, 4.5vw, 64px);
+  z-index: 100;
+}
+
+.brand-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--forest-moss);
+  color: #FFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.brand-title {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--forest-dark);
+}
+
+.brand-sub {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  color: var(--sage-accent);
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+}
+
+.nav-link {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--text-body);
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--forest-moss);
+}
+
+.nav-inquire {
+  background: var(--forest-dark);
+  color: #FFF;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  transition: all 0.25s ease;
+}
+
+.nav-inquire:hover {
+  background: var(--sage-accent);
+  transform: translateY(-2px);
+}
+
+/* Nordic Hero Lookbook */
+.nordic-hero {
+  padding-top: calc(var(--header-height) + 40px);
+  padding-bottom: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: clamp(24px, 4vw, 64px);
+  padding-right: clamp(24px, 4vw, 64px);
+}
+
+.hero-intro-header {
+  max-width: 760px;
+  margin-bottom: 48px;
+}
+
+.eco-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--sage-soft);
+  color: var(--forest-moss);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 18px;
+}
+
+.hero-main-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(38px, 4.6vw, 68px);
+  font-weight: 600;
+  color: var(--forest-dark);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin-bottom: 18px;
+}
+
+.hero-lead-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+/* Horizontal Lookbook Slider */
+.lookbook-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.lookbook-card {
+  background: var(--bg-card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.lookbook-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--sage-accent);
+  box-shadow: 0 16px 36px rgba(60, 74, 62, 0.12);
+}
+
+.card-visual-box {
+  height: 260px;
+  background: var(--bg-sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+}
+
+.card-visual-box img {
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.lookbook-card:hover .card-visual-box img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.card-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--sage-accent);
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--forest-dark);
+}
+
+.card-desc {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+.card-foot {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+}
+
+.foot-warranty {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--forest-moss);
+}
+
+.foot-link {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--forest-dark);
+}
+
+/* Nordic 10-Year Warranty Trust Section */
+.nordic-warranty {
+  background: var(--bg-sand);
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: clamp(70px, 9vh, 110px) clamp(24px, 4vw, 64px);
+}
+
+.section-head-center {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.8vw, 48px);
+  font-weight: 600;
+  color: var(--forest-dark);
+}
+
+.section-sub {
+  font-size: 14.5px;
+  color: var(--text-body);
+  line-height: 1.65;
+}
+
+.warranty-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.warranty-box {
+  background: var(--bg-card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.3s ease;
+}
+
+.warranty-box:hover {
+  transform: translateY(-4px);
+  border-color: var(--sage-accent);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+}
+
+.wb-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sage-accent);
+}
+
+.wb-title {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--forest-dark);
+}
+
+.wb-desc {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--text-light);
+}
+
+.wb-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px dashed var(--hairline);
+  font-size: 11.5px;
+  color: var(--text-body);
+}
+
+.wb-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wb-list li span {
+  color: var(--sage-accent);
+}
+
+/* Gallery Showcase */
+.nordic-gallery {
+  padding: clamp(70px, 9vh, 110px) clamp(24px, 4vw, 64px);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-grid-split {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.gallery-item {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 340px;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(32, 38, 33, 0.9) 0%, transparent 100%);
+  color: #FFF;
+}
+
+.gallery-caption span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--wheat);
+  display: block;
+}
+
+.gallery-caption h4 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+}
+
+/* Best Sellers */
+.nordic-catalog {
+  background: var(--bg-sand);
+  border-top: 1px solid var(--hairline);
+  padding: clamp(70px, 9vh, 110px) clamp(24px, 4vw, 64px);
+}
+
+.catalog-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.cat-row {
+  background: var(--bg-card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  transition: all 0.25s ease;
+}
+
+.cat-row:hover {
+  border-color: var(--forest-moss);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.cat-thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  background: var(--bg-ground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cat-thumb img {
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.cat-meta {
+  flex: 1;
+}
+
+.cat-meta h4 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--forest-dark);
+}
+
+.cat-specs {
+  display: flex;
+  gap: 20px;
+  font-size: 11.5px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+.cat-specs strong {
+  color: var(--forest-moss);
+}
+
+.cat-inquire-btn {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--forest-dark);
+  border-bottom: 1px solid var(--forest-dark);
+  padding-bottom: 2px;
+}
+
+/* Footer */
+.site-footer {
+  padding: 60px 24px;
+  text-align: center;
+  background: var(--forest-dark);
+  color: #FFF;
+}
+
+.site-footer p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .lookbook-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .warranty-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-grid-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    display: none;
+  }
+  .lookbook-track {
+    grid-template-columns: 1fr;
+  }
+  .warranty-grid {
+    grid-template-columns: 1fr;
+  }
+  .cat-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cat-specs {
+    flex-direction: column;
+    gap: 2px;
+  }
+}
